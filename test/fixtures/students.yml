@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: MyString
+  progress_report: MyString
+  classroom: one
+
+two:
+  name: MyString
+  age: MyString
+  progress_report: MyString
+  classroom: two
