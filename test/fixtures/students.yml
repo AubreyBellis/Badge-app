@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  age: MyString
+  age: 1
+  image: MyString
   progress_report: MyString
-  classroom: one
 
 two:
   name: MyString
-  age: MyString
+  age: 1
+  image: MyString
   progress_report: MyString
-  classroom: two
