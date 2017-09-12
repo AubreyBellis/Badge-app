@@ -25,7 +25,7 @@ class Teacher extends Component {
       };
   }
 
-  componentWillMount(){
+componentWillMount(){
       const teacherId = this.props.match.params.id;
       this._fetchTeachers(teacherId);
       
@@ -38,6 +38,7 @@ class Teacher extends Component {
               name: res.data.name,
               email: res.data.email,
               image: res.data.image,
+              classrooms: res.data.classrooms
 
           }})
           return res.data

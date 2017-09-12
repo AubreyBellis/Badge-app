@@ -7,9 +7,10 @@ class EditTeacher extends Component {
         super();
         this.state = {
             teacher: {
-                name: '',
-                email: '',
-                image: ''
+            name: '',
+            email: '',
+            image: '',
+            classrooms:[]
             }
         }
     }
@@ -64,10 +65,13 @@ class EditTeacher extends Component {
                         <label htmlFor="image">image: </label>
                         <input onChange={this._handleChange} type="text" name="image" value={this.state.teacher.image} />
                     </div>
+                    <div>
+                        <label htmlFor="classroom">classrooms: </label>
+                        <input onChange={this._handleChange} type="text" name="classroom" value={this.state.teacher.classroom} />
+                    </div>
                     <button onClick={this._editTeacher}>Submit</button>
                 </form>
                 <br />
-                <Link to={`/teachers/${id}`}><button>Back</button></Link>
             </div>
         );
     }

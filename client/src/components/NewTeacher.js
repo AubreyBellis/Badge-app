@@ -10,7 +10,8 @@ export default class NewTeacher extends Component {
             teacher: {
                 name: '',
                 email: '',
-                image:''
+                image:'',
+                classroom: []
                 },
             redirect: false
         
@@ -38,7 +39,7 @@ export default class NewTeacher extends Component {
     return (
       <div>
           {this.state.redirect? 
-            <Redirect to={`/`}/>
+            <Redirect to={`/teachers`}/>
             :
             <form onSubmit={this._addTeacher}>
             <div>
@@ -53,6 +54,11 @@ export default class NewTeacher extends Component {
             <label htmlFor="image">Image: </label>
             <input onChange={this._handleChange} type="text" name="image" value={this.state.teacher.image} />
             </div>
+            <div>
+            <label htmlFor="classroom">Classroom: </label>
+            <input onChange={this._handleChange} type="text" name="classroom" value={this.state.teacher.classroom} />
+            </div>
+            
             
             <button>Add New Teacher</button>
         </form>

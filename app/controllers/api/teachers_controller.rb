@@ -19,7 +19,6 @@ end
 def update
     @teacher = Teacher.find params[:id]
     @teacher.update(teacher_params)
-
 end
 
 def destroy

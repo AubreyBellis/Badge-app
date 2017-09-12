@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import TeacherCard from './TeacherCard';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 const TeacherListStyles = styled.div`
   margin: 20px 5%;
@@ -40,6 +41,7 @@ class AllTeachers extends Component{
         {this.state.teachers.map((teacher) => (
             <TeacherCard key={teacher.id} teacher={teacher} />
         ))}
+        <Link to={`/teachers/new`}><button>Add a New Teacher</button></Link>
       </TeacherListStyles>
     )
   }
