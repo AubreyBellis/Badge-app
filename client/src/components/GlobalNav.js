@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.div`
+font-family: 'Fredericka the Great', cursive;
   width: 95%;  
   display: flex;
   justify-content: space-between;

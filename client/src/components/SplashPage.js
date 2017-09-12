@@ -21,7 +21,7 @@ h1{
 h3{
     font-size: 45px;
     text-align:center;
-    font-family:
+    font-family: 'Caveat Brush', cursive;
 }`
 
 class SplashPage extends Component {
