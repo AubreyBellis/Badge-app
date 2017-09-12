@@ -13,9 +13,15 @@ background-image: url("https://i.imgur.com/qgDxzSY.jpg");
 background-size: stretch;
 background-position: center;
 background-filter: blur(2px);
-h1,h3,div {
-    
+h1{
+    font-family: 'Barrio', cursive;
     text-align:center;
+    font-size:85px;
+}
+h3{
+    font-size: 45px;
+    text-align:center;
+    font-family:
 }`
 
 class SplashPage extends Component {

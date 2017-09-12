@@ -23,7 +23,7 @@ const GlobalNav = () => {
   return (
     <Nav>
       <Link to="/">
-        <h1>Badge_of_Honor</h1>
+        <h1>BadgeApp</h1>
       </Link>
       <div>
         <Link to="/teachers">Teachers</Link>
