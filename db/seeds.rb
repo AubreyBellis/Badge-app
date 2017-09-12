@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require_relative './classroom_data.rb'
+require_relative './teacher.rb'
 
 Teacher.destroy_all
 Teacher.create({name: "Mrs. Baker", email: "MrsBaker@gmail.com", image:"https://i.imgur.com/j7B9QUL.jpg"})
