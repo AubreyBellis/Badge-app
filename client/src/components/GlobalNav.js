@@ -8,7 +8,7 @@ const Nav = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 2.5%;
-  background-color: rgba(2,178, 208, 1);
+  background-color: rgb(230, 243, 255);
   box-shadow: 0px 1px 6px black;
   a{
     text-decoration: none;
@@ -26,7 +26,7 @@ const GlobalNav = () => {
         <h1>Badge_of_Honor</h1>
       </Link>
       <div>
-        <Link to="/teacher/1">Teachers</Link>
+        <Link to="/teachers">Teachers</Link>
         {/* <Link to="/signup">Sign Up!</Link> */}
       </div>
     </Nav>

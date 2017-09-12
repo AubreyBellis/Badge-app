@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import AllTeachers from "./components/AllTeachers";
 import Teacher from "./components/Teacher";
+import SplashPage from './components/SplashPage'
 import GlobalNav from './components/GlobalNav';
 import "./App.css";
 
@@ -12,7 +13,8 @@ class App extends Component {
       <Router>
         <div>
           <GlobalNav />
-          <Route exact path="/" component={AllTeachers}/>
+          <Route exact path='/' component={SplashPage} />
+          <Route exact path="/teachers" component={AllTeachers}/>
          {/* <Route exact path="/signup" component={SignUp}/> */}
         <Route path="/teacher/:id" component={Teacher}/>
        </div>
