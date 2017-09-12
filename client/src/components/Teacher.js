@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
@@ -9,42 +10,71 @@ const TeacherStyles = styled.div`
   }
 `;
 
-class Teacher extends Component{
+
+class Teacher extends Component {
   constructor(){
-    super();
-    this.state = {
-      teacher: {},
-      classrooms: []
-    }
+      super();
+      this.state = {
+          teacher: {
+              name: '',
+              email:'',
+              image:''
+          },
+          redirect: false
+      };
   }
 
   componentWillMount(){
-    this._fetchTeacherAndClassrooms();
+      const teacherId = this.props.match.params.id;
+      this._fetchTeachers(teacherId);
+      
   }
 
-  _fetchTeacherAndClassrooms = async () => {
-    const id = this.props.match.params.id;
-    const res = await axios.get(`/api/teachers/${id}`)
-    this.setState({
-      teacher: res.data.teacher,
-      classrooms: res.data.classrooms
-    })
-  }
+  _fetchTeachers = async (teacherId) => {
+      try {
+          const res = await axios.get(`/api/teachers/${teacherId}`)
+          await this.setState({teacher: {
+              name: res.data.name,
+              email: res.data.email,
+              image: res.data.image,
 
-  render(){
+          }})
+          return res.data
+          console.log(res.data)
+      }
+      catch(err) {
+          console.log(err)
+      }
+  }
+  _deleteTeacher = async (e) => {
+      e.preventDefault();
+      try {
+          const res = await axios.delete(`/api/teachers/${this.props.match.params.id}`)
+          this.setState({redirect: true})
+          return res.data
+          
+
+      } catch(err) {
+          console.log(err)
+      }
+  }
+  render() {
     return (
-      <TeacherStyles>
-        <img src={this.state.teacher.image} />
-        <h1>{this.state.teacher.name}</h1>
-        {/* <h4>Nationality: {this.state.artist.nationality}</h4> */}
-        <h3>Classrooms</h3>
-        {this.state.classrooms.map(classroom => (
-          <div key={classroom.id}>
-            <p>Grade: {classroom.grade_level}</p>
-            <p>Students: {classroom.students}</p>
-          </div>
-        ))}
-      </TeacherStyles>
+      <div>
+        {this.state.redirect 
+        ? 
+            <Redirect to={'/'} />
+        :
+            <div>
+            <img src={this.state.teacher.image} />
+            <h1><strong>Name: </strong> {this.state.teacher.name}</h1>
+            <p><strong>Email: </strong> {this.state.teacher.email}</p>
+            <Link to={`/teachers/${this.props.match.params.id}/edit`}><button>Edit Teacher</button></Link>
+            <button onClick={this._deleteTeacher}>Delete This Teacher</button>
+      </div>
+
+    }
+    </div>
     )
   }
 }
