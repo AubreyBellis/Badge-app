@@ -1,52 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class EditTeacher extends Component {
     constructor() {
         super();
         this.state = {
-            creature: {
+            teacher: {
                 name: '',
                 email: '',
-                image:''
-            },
-            redirect: false
-
+                image: ''
+            }
         }
     }
-    
 
     componentWillMount() {
-        const teacherId = this.props.match.params.id
-        this._fetchTeacher(teacherId)       
+        this._fetchTeacher()
     }
-
-    _fetchTeacher = async (teacherId) => {
+    
+    _fetchTeacher = async () => {
+        const id = this.props.match.params.id
         try {
-            const res = await axios.get(`/api/teachers/${teacherId}`)
-            await this.setState({
-                teacher: {
-                    name: res.data.name,
-                    email: res.data.email,
-                    image: res.data.image
-                }
-            })
+            const res = await axios.get(`/api/teachers/${id}`);
+            await this.setState({teacher: res.data.teacher});
+            return res.data;
         }
-        catch (err) {
-            console.log(err)
-        }
-    }   
-
-    _editTeacher = async (e) => {
-        e.preventDefault();
-        const teacher = this.state.teacher
-        const teacherId = this.props.match.params.id
-        try {
-            const res = await axios.put(`/api/teachers/${teacherId}`, teacher)
-            this.setState({redirect: true})
-            return res.data
-        } 
         catch (err) {
             console.log(err)
         }
@@ -55,37 +33,41 @@ class EditTeacher extends Component {
     _handleChange = (e) => {
         const newState = {...this.state.teacher}
         newState[e.target.name] = e.target.value
-        this.setState({
-            teacher: newState
-        })
+        this.setState({teacher: newState})
+    }
+
+    _editTeacher = (e) => {
+        e.preventDefault();
+        const id = this.props.match.params.id
+        const payload = this.state.teacher
+        try {
+            const res = axios.patch(`/api/teachers/${id}`, payload)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     render() {
+        const id = this.state.teacher.id
         return (
             <div>
-                {this.state.redirect? 
-                <Redirect to={`/teachers/${this.props.match.params.id}`}/>
-                :
-                <div>
-                <h1>Create a Teacher</h1>
                 <form>
                     <div>
-                        <label htmlFor="name">Name: </label>
+                        <label htmlFor="name">name: </label>
                         <input onChange={this._handleChange} type="text" name="name" value={this.state.teacher.name} />
                     </div>
                     <div>
-                        <label htmlFor="email">Email: </label>
+                        <label htmlFor="email">email: </label>
                         <input onChange={this._handleChange} type="text" name="email" value={this.state.teacher.email} />
                     </div>
                     <div>
-                        <label htmlFor="image">Image:</label>
+                        <label htmlFor="image">image: </label>
                         <input onChange={this._handleChange} type="text" name="image" value={this.state.teacher.image} />
                     </div>
-                    <button onClick={this._teacher}>Submit</button>
+                    <button onClick={this._editTeacher}>Submit</button>
                 </form>
-                </div>
-                }
-              
+                <br />
+                <Link to={`/teachers/${id}`}><button>Back</button></Link>
             </div>
         );
     }

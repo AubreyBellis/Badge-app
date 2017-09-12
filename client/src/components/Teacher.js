@@ -18,7 +18,8 @@ class Teacher extends Component {
           teacher: {
               name: '',
               email:'',
-              image:''
+              image:'',
+              classrooms:[]
           },
           redirect: false
       };
@@ -65,12 +66,17 @@ class Teacher extends Component {
         ? 
             <Redirect to={'/'} />
         :
+
+
             <div>
+            <TeacherStyles>
             <img src={this.state.teacher.image} />
             <h1><strong>Name: </strong> {this.state.teacher.name}</h1>
             <p><strong>Email: </strong> {this.state.teacher.email}</p>
+            <p><strong>Classrooms:</strong>{this.state.teacher.classrooms}</p>
             <Link to={`/teachers/${this.props.match.params.id}/edit`}><button>Edit Teacher</button></Link>
             <button onClick={this._deleteTeacher}>Delete This Teacher</button>
+            </TeacherStyles>
       </div>
 
     }

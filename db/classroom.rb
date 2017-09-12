@@ -1,5 +1,5 @@
 require_relative './classroom_data.rb'
-require_relative './teacher_data.rb'
+require_relative './teacher.rb'
 
 Classroom.destroy_all
 Teacher.destroy_all
