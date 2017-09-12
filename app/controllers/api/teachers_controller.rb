@@ -3,26 +3,46 @@ class Api::TeachersController < ApplicationController
         @teachers = Teacher.all
         render json: @teachers
     end
-    def create
-      @teacher = Teacher.create!(teacher_params)
-      redirect_to teacher_path(@teacher)
-    end
-  
     def show
       @teacher = Teacher.find(params[:id])
-      render json: @teacher
+      @classrooms = @teacher.classrooms.all
+      render json: {
+        teacher: @teacher,
+        classrooms: @classroom
+      }
+    end
+  
+    def create
+      @teacher = Teacher.new teacher_params
+  
+      if @teacher.save
+        render json: @teacher
+      else
+        render json: {
+          message: 'Error when creating Teacher'
+        }
+      end
     end
   
     def update
-      @teacher = Teacher.find(params[:id])
-      @teacher.update!(teacher_params)
-      redirect_to teacher_path(@teacher)
+      @teacher = Teacher.find params[:id]
+  
+      if @teacher.update(teacher_params)
+        render json: @teacher
+      else
+        render json: {
+          message: 'Error when updating teacher'
+        }
+      end
     end
   
     def destroy
       @teacher = Teacher.find(params[:id])
       @teacher.destroy
-      redirect_to teachers_path
+  
+      render json: {
+        message: 'Teacher successfully destroyed'
+      }
     end
     private
     

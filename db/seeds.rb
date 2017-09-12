@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Teacher.destroy_all
+Teacher.create({name: "Mrs. Baker", email: "MrsBaker@gmail.com", image:"https://i.imgur.com/j7B9QUL.jpg"})
+Teacher.create({name: "Mr. Wren", email: "MrWren@gmail.com", image:"https://i.imgur.com/TIj5Hxg.jpg"})
+
+

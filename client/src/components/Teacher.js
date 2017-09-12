@@ -1,43 +1,52 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import axios from 'axios'
+import styled from 'styled-components'
 
-class Teacher extends Component {
-  constructor() {
+const TeacherStyles = styled.div`
+  img {
+    max-height: 400px;
+    width: 100%;
+  }
+`;
+
+class Teacher extends Component{
+  constructor(){
     super();
     this.state = {
       teacher: {},
-      classrooms: [],
-    };
+      classrooms: []
+    }
   }
 
-  componentWillMount() {
-    const teacherId = this.props.match.params.id;
-    this._fetchTeachers(teacherId)
+  componentWillMount(){
+    this._fetchTeacherAndClassrooms();
   }
 
-  _fetchTeachers = async (teacherId) => {
-    try {
-      const response = await axios.get(`/api/teachers/${teacherId}/classrooms`)
-      await this.setState({teacher: response.data.teacher, classrooms: response.data.classrooms});
-      return response.data;
-    }
-    catch (err) {
-      await this.setState({error: err.message})
-      return err.message
-    }
-  } 
+  _fetchTeacherAndClassrooms = async () => {
+    const id = this.props.match.params.id;
+    const res = await axios.get(`/api/teachers/${id}`)
+    this.setState({
+      teacher: res.data.teacher,
+      classrooms: res.data.classrooms
+    })
+  }
 
-  render() {
+  render(){
     return (
-      <div>
-        <img src={this.state.teacher.image} alt="" />
+      <TeacherStyles>
+        <img src={this.state.teacher.image} />
         <h1>{this.state.teacher.name}</h1>
-        {/* {this.state.classrooms.map(song => (
+        {/* <h4>Nationality: {this.state.artist.nationality}</h4> */}
+        <h3>Classrooms</h3>
+        {this.state.classrooms.map(classroom => (
           <div key={classroom.id}>
-            <h4>{classroom.grade_level}</h4> */}
+            <p>Grade: {classroom.grade_level}</p>
+            <p>Students: {classroom.students}</p>
           </div>
-    );
+        ))}
+      </TeacherStyles>
+    )
   }
 }
 
-export default Teacher;  
+export default Teacher;

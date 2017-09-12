@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :teacher do
-      resources :classroom do
-        resources :student, only: [:index, :show]
+    resources :teachers
       end
     end
-  end 
-end 
