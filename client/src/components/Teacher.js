@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+import ClassroomList from './ClassroomList'
 
 const TeacherStyles = styled.div`
   img {
@@ -15,11 +16,11 @@ class Teacher extends Component {
   constructor(){
       super();
       this.state = {
+          classrooms:[],
           teacher: {
               name: '',
               email:'',
-              image:'',
-              classrooms:[]
+              image:''
           },
           redirect: false
       };
@@ -27,20 +28,19 @@ class Teacher extends Component {
 
 componentWillMount(){
       const teacherId = this.props.match.params.id;
-      this._fetchTeachers(teacherId);
+      this._fetchTeachersAndClassrooms();
       
   }
 
-  _fetchTeachers = async (teacherId) => {
+  _fetchTeachersAndClassrooms = async () => {
       try {
-          const res = await axios.get(`/api/teachers/${teacherId}`)
-          await this.setState({teacher: {
-              name: res.data.name,
-              email: res.data.email,
-              image: res.data.image,
+          const id = this.props.match.params.id;
+          const res = await axios.get(`/api/teachers/${id}/classrooms`)
+          await this.setState({
+           teacher: res.data.teacher,
               classrooms: res.data.classrooms
-
-          }})
+          })
+        
           return res.data
           console.log(res.data)
       }
@@ -74,7 +74,8 @@ componentWillMount(){
             <img src={this.state.teacher.image} />
             <h1><strong>Name: </strong> {this.state.teacher.name}</h1>
             <p><strong>Email: </strong> {this.state.teacher.email}</p>
-            <p><strong>Classrooms:</strong>{this.state.teacher.classrooms}</p>
+            <p><strong>Classrooms:</strong></p>
+            <ClassroomList classrooms={this.state.classrooms} teacherId={this.props.match.params.id}/>
             <Link to={`/teachers/${this.props.match.params.id}/edit`}><button>Edit Teacher</button></Link>
             <button onClick={this._deleteTeacher}>Delete This Teacher</button>
             </TeacherStyles>

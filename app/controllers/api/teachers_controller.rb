@@ -6,8 +6,11 @@ class Api::TeachersController < ApplicationController
 end
 
 def show
+    
     @teacher = Teacher.find params[:id]
-    render json: @teacher
+    @classrooms = @teacher.classrooms.all
+    render json: {teacher: @teacher, 
+                classrooms: @classrooms}
 end
 
 def create
