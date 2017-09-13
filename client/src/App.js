@@ -9,6 +9,7 @@ import GlobalNav from './components/GlobalNav';
 import NewTeacher from './components/NewTeacher';
 import ClassroomList from './components/ClassroomList';
 import Classroom from './components/Classroom';
+import EditClassroom from './components/EditClassroom';
 // import { setAxiosDefaults } from './util';
 
 
@@ -28,6 +29,7 @@ class App extends Component {
         <Route exact path="/teacher/:id" component={Teacher}/>
         <Route exact path="/classroom/:id" component={Classroom}/>
         <Route exact path="/classrooms" component={ClassroomList}/>
+        <Route exact path='/classrooms/:id/edit' component={EditClassroom} />
       
        </div>
       </Router>
