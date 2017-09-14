@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+import StudentList from './StudentList'
 
 
 const ClassroomStyles = styled.div`
@@ -63,10 +64,11 @@ componentWillMount(){
 
             <div>
             <ClassroomStyles>
+
             <img src={this.state.student.image} />
             <h1><strong>Name: </strong> {this.state.student.name}</h1>
             <p><strong>Age:{this.state.student.age}</strong></p>
-            {/* <ClassroomList classrooms={this.state.classrooms} teacherId={this.props.match.params.id}/> */}
+            <StudentList students={this.state.students} classroomId={this.props.match.params.id}/>
 
             {/* <Link to={`/classrooms/${this.props.match.params.id}/edit`}><button>Edit Classroom Information</button></Link>
             <button onClick={this._deleteClassroom}>Delete This Classroom</button> */}

@@ -8,7 +8,7 @@ class Api::StudentsController < ApplicationController
     
       def show
         @classroom = Classroom.find(params[:classroom_id])
-        @student = @classroom.students.find params[:id]
+        @student = Student.find params[:id]
     
         render json: @student
       end

@@ -21,10 +21,9 @@ const StudentCard = (props) => {
   return (
     <ClassroomStyles>
         <div>
-      <Link to={`/students/${student.id}`}>
+
       <img src={student.image} alt={student.name}/>
-       </Link>
-       <h3>Name:{student.name}</h3>
+      <h3>Name:{student.name}</h3>
        <h3>Age:{student.age}</h3>
         </div>
     </ClassroomStyles>
