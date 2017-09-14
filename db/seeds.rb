@@ -8,8 +8,9 @@
 
 
 Teacher.destroy_all
-Student.destroy_all
 Classroom.destroy_all
+Student.destroy_all
+
 # Grade.destroy_all
 
 teacher_one = Teacher.create({name: "Mrs. Baker", email: "MrsBaker@gmail.com", image:"https://i.imgur.com/j7B9QUL.jpg"})

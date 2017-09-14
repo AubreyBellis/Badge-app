@@ -29,7 +29,7 @@ class ClassroomList extends Component {
         return (
             <div>
                {this.props.classrooms.map((classroom) =>(
-                 <ClassroomCard key={classroom.id} classrooms={classroom} teacherId={this.props.teacherId}/>
+                 <ClassroomCard key={classroom.id} classroom={classroom} teacherId={this.props.teacherId}/>
                ))}
                
                 </div>

@@ -9,8 +9,7 @@ class EditTeacher extends Component {
             teacher: {
             name: '',
             email: '',
-            image: '',
-            classrooms:[]
+            image: ''
             }
         }
     }

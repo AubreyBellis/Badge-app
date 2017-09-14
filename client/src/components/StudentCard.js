@@ -16,22 +16,19 @@ const ClassroomStyles = styled.div`
   }
 `;
 
-const ClassroomCard = (props) => {
-  const classroom = props.classroom;
-  console.log(classroom);
-  // const id = this.props.match.params.id;
+const StudentCard = (props) => {
+  const student = props.students;
   return (
     <ClassroomStyles>
         <div>
-        
-      <Link to={`/classrooms/${classroom.id}`}>
-        {/* <img src={teacher.image} alt={teacher.name} /> */}
-        <h3>{classroom.grade_level}</h3>
-        </Link>
-      {/* </Link> */}
-      </div>
+      <Link to={`/students/${student.id}`}>
+      <img src={student.image} alt={student.name}/>
+       </Link>
+       <h3>Name:{student.name}</h3>
+       <h3>Age:{student.age}</h3>
+        </div>
     </ClassroomStyles>
   );
 };
 
-export default ClassroomCard;
+export default StudentCard;

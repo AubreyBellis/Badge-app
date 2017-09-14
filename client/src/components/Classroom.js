@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
-
+import StudentList from './StudentList'
 
 const ClassroomStyles = styled.div`
   img {
@@ -31,11 +31,12 @@ componentWillMount(){
   }
 
   _fetchClassroomAndStudents = async () => {
-      console.log('searching for classroom')
+    
       try {
+        
           const id = this.props.match.params.id;
           console.log(id)
-          const res = await axios.get(`/api/classrooms/${id}/students`)
+          const res = await axios.get(`/api/classrooms/${this.props.match.params.id}/students`)
           this.setState({
            classroom: res.data.classroom,
               students: res.data.students
@@ -73,7 +74,7 @@ componentWillMount(){
             <ClassroomStyles>
             <h1><strong>Grade_Level: </strong> {this.state.classroom.grade_level}</h1>
             <p><strong>Students:</strong></p>
-            {/* <ClassroomList classrooms={this.state.classrooms} teacherId={this.props.match.params.id}/> */}
+            <StudentList students={this.state.students} classroomId={this.props.match.params.id}/>
 
             <Link to={`/classrooms/${this.props.match.params.id}/edit`}><button>Edit Classroom Information</button></Link>
             <button onClick={this._deleteClassroom}>Delete This Classroom</button>
