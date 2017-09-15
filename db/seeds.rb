@@ -22,12 +22,16 @@ classroom_two  = Classroom.create({grade_level: "Fifth Grade",  teacher_id: teac
 classroom_three  = Classroom.create({grade_level: "Second Grade",  teacher_id: teacher_two.id})
 classroom_four  = Classroom.create({grade_level: "Team Players",  teacher_id: teacher_three.id})
 
-student_one = Student.create({name: 'Ethan Brown', age:'13', image:'https://i.imgur.com/P8QAqnk.jpg', classroom_id:classroom_one.id})
 student_two = Student.create({name: 'Lisa Low', age: '15', image:'https://i.imgur.com/pnp7q0f.jpg', classroom_id:classroom_two.id})
 student_three = Student.create({name: 'John King', age: '16', image:'https://i.imgur.com/NpdwiLN.jpg', classroom_id:classroom_two.id})
 student_four = Student.create({name: 'Alex Smith', age: '17', image:'https://i.imgur.com/ZNfkhf5.jpg', classroom_id:classroom_two.id})
+student_eight = Student.create({name: 'Ethan Brown', age:'13', image:'https://i.imgur.com/P8QAqnk.jpg', classroom_id:classroom_two.id})
 
+student_five = Student.create({name: 'Justin Beiber', age: '15', image:'https://i.imgur.com/g4gJ6FT.jpg', classroom_id:classroom_one.id})
+student_six = Student.create({name: 'Amy Adams', age: '16', image:'https://i.imgur.com/eTEdQ5H.jpg', classroom_id:classroom_one.id})
+student_seven = Student.create({name: 'Kristen Steward', age: '15', image:'https://i.imgur.com/UJSTjKX.jpg', classroom_id:classroom_one.id})
 
 
 # grade_one = Grade.create({student_id: student_one.id, quarter: 1, subject: 'Reading'})
+
 # grade_two = Grade.create({student_id: student_two.id, quarter: 1, subject: 'Writing'})
