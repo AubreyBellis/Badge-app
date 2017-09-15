@@ -77,7 +77,7 @@ componentWillMount(){
            
  <StudentList students={this.state.students} classroomId={this.props.match.params.id}/>
             <Link to={`/classrooms/${this.props.match.params.id}/edit`}><button>Edit Classroom Information</button></Link>
-            <button onClick={this._deleteClassroom}>Delete This Classroom</button>
+            {/* <button onClick={this._deleteClassroom}>Delete This Classroom</button> */}
             </ClassroomStyles>
       </div>
 

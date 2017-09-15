@@ -13,9 +13,9 @@ Student.destroy_all
 
 # Grade.destroy_all
 
-teacher_one = Teacher.create({name: "Mrs. Baker", email: "MrsBaker@gmail.com", image:"https://i.imgur.com/j7B9QUL.jpg"})
-teacher_two = Teacher.create({name: "Mr. Wren", email: "MrWren@gmail.com", image:"https://i.imgur.com/H8eP2Nv.jpg"})
-teacher_three = Teacher.create({name: "Coach Mike", email: "CoachMike@gmail.com", image:"https://i.imgur.com/miimyGS.jpg"})
+teacher_one = Teacher.create({name: "Mrs. Baker",title:'Drama Teacher', email: "MrsBaker@gmail.com", image:"https://i.imgur.com/j7B9QUL.jpg"})
+teacher_two = Teacher.create({name: "Mr. Wren", title:'AP Environmental Science',email: "MrWren@gmail.com", image:"https://i.imgur.com/H8eP2Nv.jpg"})
+teacher_three = Teacher.create({name: "Coach Mike", title:'JV Football Coach', email: "CoachMike@gmail.com", image:"https://i.imgur.com/miimyGS.jpg"})
 
 classroom_one = Classroom.create({grade_level: "Third Grade", teacher_id: teacher_one.id})
 classroom_two  = Classroom.create({grade_level: "Fifth Grade",  teacher_id: teacher_two.id})
@@ -29,7 +29,11 @@ student_eight = Student.create({name: 'Ethan Brown', age:'13', image:'https://i.
 
 student_five = Student.create({name: 'Justin Beiber', age: '15', image:'https://i.imgur.com/g4gJ6FT.jpg', classroom_id:classroom_one.id})
 student_six = Student.create({name: 'Amy Adams', age: '16', image:'https://i.imgur.com/eTEdQ5H.jpg', classroom_id:classroom_one.id})
-student_seven = Student.create({name: 'Kristen Steward', age: '15', image:'https://i.imgur.com/UJSTjKX.jpg', classroom_id:classroom_one.id})
+student_seven = Student.create({name: 'Kristen Stewart', age: '15', image:'https://i.imgur.com/UJSTjKX.jpg', classroom_id:classroom_one.id})
+
+student_nine = Student.create({name: 'Evan Taylor', age: '15', image:'https://i.imgur.com/uTFv3n9.jpg', classroom_id:classroom_three.id})
+student_ten = Student.create({name: 'James Wheeler', age: '15', image:'https://i.imgur.com/xR6OqOp.jpg', classroom_id:classroom_three.id})
+student_eleven = Student.create({name: 'Big Donnie', age: '15', image:'https://i.imgur.com/kx6c1Gi.jpg', classroom_id:classroom_three.id})
 
 
 # grade_one = Grade.create({student_id: student_one.id, quarter: 1, subject: 'Reading'})

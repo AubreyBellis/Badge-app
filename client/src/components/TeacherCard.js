@@ -24,6 +24,7 @@ const TeacherCard = (props) => {
       <Link to={`/teacher/${teacher.id}`}>
         <img src={teacher.image} alt={teacher.name} />
         <h3>{teacher.name}</h3>
+        <h3>{teacher.title}</h3>
       </Link>
     </TeacherStyles>
   );
