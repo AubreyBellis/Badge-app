@@ -12,7 +12,7 @@ width: 100vw;
 background-image: url("https://i.imgur.com/qgDxzSY.jpg");
 background-size: stretch;
 background-position: center;
-background-filter: blur(2px);
+
 h1{
     font-family: 'Barrio', cursive;
     text-align:center;
@@ -21,7 +21,7 @@ h1{
 h3,h2{
     font-size: 45px;
     text-align:center;
-    font-family: 'Caveat Brush', cursive;
+    font-family: 'Fjalla One', sans-serif;
 }`
 
 class SplashPage extends Component {
