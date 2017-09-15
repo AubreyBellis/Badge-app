@@ -13,6 +13,7 @@ const ClassroomStyles = styled.div`
   }
   h3{
     padding: 5px 0;
+    
   }
 `;
 

@@ -29,7 +29,7 @@ class SplashPage extends Component {
         return (
                 <div>
                 <HomePageContainer>
-                <h1>Badge_of_Honor</h1>
+                <h1>YEARBOOK_ON_RAILS</h1>
                 <h3> Description about App</h3>
                 </HomePageContainer>
                 </div>

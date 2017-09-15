@@ -10,6 +10,7 @@ const TeacherListStyles = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  font-family: 'Barrio', cursive;
 `;
 
 class AllTeachers extends Component{

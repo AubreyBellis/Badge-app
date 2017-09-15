@@ -6,11 +6,13 @@ const TeacherStyles = styled.div`
   width: 30%;
   margin: 20px 0; 
   box-shadow: 1px 1px 5px black;
+  
   img {
     width: 100%;
     max-height: 200px;
   }
   h3{
+    font-family: 'Barrio', cursive;
     padding: 5px 0;
   }
 `;

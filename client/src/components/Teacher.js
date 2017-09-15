@@ -9,6 +9,9 @@ const TeacherStyles = styled.div`
     max-height: 400px;
     width: 100%;
   }
+  h1, p {
+    font-family: 'Fjalla One', sans-serif;
+  }
 `;
 
 
