@@ -4,6 +4,7 @@ import styled from 'styled-components'
 // import ClassroomList from './components/ClassroomList'
 
 const ClassroomStyles = styled.div`
+ flex-wrap: wrap;
   width: 30%;
   margin: 20px 0; 
   box-shadow: 1px 1px 5px black;

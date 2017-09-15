@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import StudentList from './StudentList'
 
 const ClassroomStyles = styled.div`
+    flex-wrap:wrap;
+    
   img {
     max-height: 400px;
     width: 100%;
@@ -74,8 +76,9 @@ componentWillMount(){
             <ClassroomStyles>
             <h1><strong>Grade_Level: </strong> {this.state.classroom.grade_level}</h1>
             <p><strong>Students:</strong></p>
-           
+           <h1>
  <StudentList students={this.state.students} classroomId={this.props.match.params.id}/>
+        </h1>
             <Link to={`/classrooms/${this.props.match.params.id}/edit`}><button>Edit Classroom Information</button></Link>
             {/* <button onClick={this._deleteClassroom}>Delete This Classroom</button> */}
             </ClassroomStyles>
