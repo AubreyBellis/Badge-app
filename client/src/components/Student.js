@@ -20,7 +20,8 @@ class Student extends Component {
         student: {
             name: '',
             age:'',
-            image:''
+            image:'',
+            quote:''
         },
         redirect: false
     };

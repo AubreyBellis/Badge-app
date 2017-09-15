@@ -26,6 +26,7 @@ const StudentCard = (props) => {
       <img src={student.image} alt={student.name}/>
       <h3>Name:{student.name}</h3>
        <h3>Age:{student.age}</h3>
+       <h3>Yearbook_quote:{student.quote}</h3>
         </div>
     </ClassroomStyles>
   );
