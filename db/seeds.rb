@@ -15,7 +15,7 @@ Student.destroy_all
 
 teacher_one = Teacher.create({name: "Mrs. Baker",title:'Drama Teacher', email: "MrsBaker@gmail.com", image:"https://i.imgur.com/j7B9QUL.jpg"})
 teacher_two = Teacher.create({name: "Mr. Wren", title:'AP Environmental Science',email: "MrWren@gmail.com", image:"https://i.imgur.com/H8eP2Nv.jpg"})
-teacher_three = Teacher.create({name: "Coach Mike", title:'JV Football Coach', email: "CoachMike@gmail.com", image:"https://i.imgur.com/miimyGS.jpg"})
+teacher_three = Teacher.create({name: "Dirty Mike", title:'JV Football Coach', email: "CoachMike@gmail.com", image:"https://i.imgur.com/miimyGS.jpg"})
 
 classroom_one = Classroom.create({grade_level: "10th & 11th", teacher_id: teacher_one.id})
 classroom_two  = Classroom.create({grade_level: "11th",  teacher_id: teacher_two.id})
