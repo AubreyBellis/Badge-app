@@ -12,7 +12,7 @@ const TeacherStyles = styled.div`
     max-height: 200px;
   }
   h3{
-    font-family: 'Barrio', cursive;
+    font-family: 'Fjalla One', sans-serif;
     padding: 5px 0;
   }
 `;

@@ -12,6 +12,7 @@ const ClassroomStyles = styled.div`
     max-height: 200px;
   }
   h3{
+    font-family: 'Fjalla One', sans-serif;
     padding: 5px 0;
     
   }
@@ -26,7 +27,7 @@ const StudentCard = (props) => {
       <img src={student.image} alt={student.name}/>
       <h3>Name:{student.name}</h3>
        <h3>Age:{student.age}</h3>
-       <h3>Yearbook_quote:{student.quote}</h3>
+       <h3>Quote:{student.quote}</h3>
         </div>
     </ClassroomStyles>
   );

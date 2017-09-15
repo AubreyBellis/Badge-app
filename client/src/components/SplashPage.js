@@ -18,7 +18,7 @@ h1{
     text-align:center;
     font-size:85px;
 }
-h3{
+h3,h2{
     font-size: 45px;
     text-align:center;
     font-family: 'Caveat Brush', cursive;
@@ -30,7 +30,12 @@ class SplashPage extends Component {
                 <div>
                 <HomePageContainer>
                 <h1>YEARBOOK_ON_RAILS</h1>
-                <h3> Description about App</h3>
+
+                <br />
+                <br />
+                <h3> Take your <strong>Glory Days</strong> with you anywhere!</h3>
+                <br />
+                <h2>SAVE THE TREES.</h2>
                 </HomePageContainer>
                 </div>
         );
