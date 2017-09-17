@@ -31,6 +31,7 @@ class SplashPage extends Component {
         super();
         this.state = {
             quotes: [],
+            Accept: 'application/json'
         }
     }
 
