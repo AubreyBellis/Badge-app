@@ -11,7 +11,7 @@ const FooterDiv = styled.div`
     align-content:center;
     box-shadow: 0px 0px 15px black;
     font-family: 'Fjalla One', sans-serif;
-    h3{
+    h1{
         color: white;
         font-size: 16px;
         font-weight: bold;
@@ -27,7 +27,7 @@ class SplashPageFooter extends Component {
         return (
             <FooterDiv>
 
-<h3> &#x2661; &#x2661; &#x2661; Aubrey Ellis</h3>
+<h1> &#x2661; &#x2661; &#x2661; Aubrey Ellis</h1>
             </FooterDiv>
         );
     }

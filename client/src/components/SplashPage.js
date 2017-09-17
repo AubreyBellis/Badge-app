@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SplashPageFooter from './SplashPageFooter';
-
+import axios from 'axios';
 const HomePageContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -18,13 +18,37 @@ h1{
     text-align:center;
     font-size:85px;
 }
-h3,h2{
+h2, h3{
     font-size: 45px;
     text-align:center;
+    align-content:center;
     font-family: 'Fjalla One', sans-serif;
-}`
+}
+`
 
 class SplashPage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            quotes: [],
+        }
+    }
+
+    componentWillMount() {
+        this._getQuotes();  
+    }
+
+    _getQuotes = async () => {
+        try {
+            const res = await axios.get(`http://quotes.rest/qod.json`) 
+            await this.setState({ quotes: res.data })
+            return res.data
+        }
+        catch (error) {
+            await this.setState({ error: error.message})
+            return error.message
+        }
+    }
     render() {
         return (
                 <div>
@@ -34,10 +58,11 @@ class SplashPage extends Component {
                 <br />
                 <br />
                 <h3> Take your <strong>Glory Days</strong> with you anywhere!</h3>
+            
                 <br />
-                <h2>SAVE THE TREES.</h2>
                 </HomePageContainer>
                 <SplashPageFooter></SplashPageFooter>
+             
                 </div>
         );
     }
