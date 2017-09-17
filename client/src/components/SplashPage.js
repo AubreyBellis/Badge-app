@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components';
-
+import SplashPageFooter from './SplashPageFooter';
 
 const HomePageContainer = styled.div`
 display: flex;
@@ -37,6 +37,7 @@ class SplashPage extends Component {
                 <br />
                 <h2>SAVE THE TREES.</h2>
                 </HomePageContainer>
+                <SplashPageFooter></SplashPageFooter>
                 </div>
         );
     }
