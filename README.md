@@ -10,6 +10,7 @@
 
 
 ## **ERD**
+![ERD](https://i.imgur.com/hzFgpY6.png)
 
 ## [HEROKU](https://badgeofhonor.herokuapp.com/): App Deployed
 
