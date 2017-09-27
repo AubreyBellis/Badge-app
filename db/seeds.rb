@@ -31,7 +31,7 @@ student_five = Student.create({name: 'Justin Beiber', quote:'"Love yourself"', a
 student_six = Student.create({name: 'Amy Adams', quote:'"Donuts are always the answer"', age: '16', image:'https://i.imgur.com/eTEdQ5H.jpg', classroom_id:classroom_one.id})
 student_seven = Student.create({name: 'Kristen Stewart', quote:'"I like vampires... "', age: '15', image:'https://i.imgur.com/UJSTjKX.jpg', classroom_id:classroom_one.id})
 
-student_nine = Student.create({name: 'Evan Taylor', quote:'"all me"', age: '15', image:'https://i.imgur.com/uTFv3n9.jpg', classroom_id:classroom_four.id})
+student_nine = Student.create({name: 'Evan Taylor', quote:'"High School Was Easy. It Was Like Riding A Bike. Except The Bike Was On Fire & The Ground Was On Fire & Everything Was On Fire Because It Was Hell"', age: '15', image:'https://i.imgur.com/uTFv3n9.jpg', classroom_id:classroom_four.id})
 student_ten = Student.create({name: 'James Wheeler', quote:'"#NoFilter"', age: '15', image:'https://i.imgur.com/xR6OqOp.jpg', classroom_id:classroom_four.id})
 student_eleven = Student.create({name: 'Big Donnie', quote:'"Education is important but big biceps are importanter"', age: '15', image:'https://i.imgur.com/kx6c1Gi.jpg', classroom_id:classroom_four.id})
 
